@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Graph : MonoBehaviour
+public class ParabolaGraphScript : MonoBehaviour
 {
     [SerializeField]
     Transform pointPrefab = default;
 
-    [SerializeField, Range(10,100)]
+    [SerializeField, Range(10, 100)]
     int resolution = 10;
 
     [SerializeField, Range(2, 10)]
@@ -21,7 +21,7 @@ public class Graph : MonoBehaviour
         for (int i = 0; i < resolution; i++)
         {
             Transform point = Instantiate(pointPrefab);
-            position.x = (i + 0.5f) * step - ((float)graphRange/2);
+            position.x = (i + 0.5f) * step - ((float)graphRange / 2);
             position.y = position.x * position.x;
             point.localPosition = position;
             point.localScale = scale;
